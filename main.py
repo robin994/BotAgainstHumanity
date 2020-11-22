@@ -61,7 +61,7 @@ def on_callback_query(msg):
     print("Callback Query:", query_id, from_id, query_data)
 
 
-bot = telepot.Bot('1465603402:AAFl6HCxzVKlWPdK6A33PNEsjm-6KZ_ebvw')
+bot = telepot.Bot('TOKEN')
 MessageLoop(bot, {'chat': on_chat_message,
                   'callback_query': on_callback_query}).run_as_thread()
 print('Listening ...')
