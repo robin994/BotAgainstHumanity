@@ -4,6 +4,12 @@ from telepot.loop import MessageLoop
 from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
 
 
+logging.getLogger().setLevel(logging.INFO)
+
+def prepareGame():
+    #TODO: da preimpostare
+    return 1
+
 
 def startgame(chat_id, timeToGo):
     print("Avvio gioco")
@@ -61,7 +67,7 @@ def on_callback_query(msg):
     print("Callback Query:", query_id, from_id, query_data)
 
 
-bot = telepot.Bot('TOKEN')
+bot = telepot.Bot('1465603402:AAH9ST1L3F8Mq4LHGSx93SoyB4Mm2grWJXQ')
 MessageLoop(bot, {'chat': on_chat_message,
                   'callback_query': on_callback_query}).run_as_thread()
 print('Listening ...')
