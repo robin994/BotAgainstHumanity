@@ -22,7 +22,7 @@ class CardsAgainstHumanity():
         if type == 1:
             toReturn = self.__whiteCards[random.randint(0, len(self.__cards))]
             if toReturn.getPicked():
-                self.pickCard(self)
+                self.pickCard(self, type)
             else:
                 toReturn.setPicked(True)
                 return toReturn
