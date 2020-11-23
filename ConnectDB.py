@@ -32,9 +32,9 @@ class ConnectDB:
 
     def getChards(self, language):
         query = "SELECT id, type, text FROM chards WHERE LANGUAGE = " + language
-        chards = self.__sendQuery(query)
+        cards = self.__sendQuery(query)
         toReturn = None
-        for actualchard in chards:
+        for actualchard in cards:
             logging.info('actualchard: ' + actualchard)
             toReturn.append(Card(actualchard[0], actualchard[1], actualchard[2]))
         return toReturn
@@ -50,9 +50,9 @@ class ConnectDB:
 
     def getLanguage(self):
         query = self.__sendQuery("SELECT id, type, text FROM chards")
-        chards = self.__sendQuery(query)
+        cards = self.__sendQuery(query)
         toReturn = None
-        for actualchard in chards:
+        for actualchard in cards:
             logging.info('actualchard: ' + actualchard)
             toReturn.append(Card(actualchard[0], actualchard[1], actualchard[2]))
         return toReturn

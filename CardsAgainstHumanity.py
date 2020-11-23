@@ -22,14 +22,14 @@ class CardsAgainstHumanity():
         if type == 1:
             toReturn = self.__whiteCards[random.randint(0, len(self.__cards))]
             if toReturn.getPicked():
-                self.pickChard(self)
+                self.pickCard(self)
             else:
                 toReturn.setPicked(True)
                 return toReturn
         else:
             toReturn = self.__blackCards[random.randint(0, len(self.__cards))]
             if toReturn.getPicked():
-                self.pickChard(self)
+                self.pickCard(self)
             else:
                 toReturn.setPicked(True)
                 return toReturn
@@ -38,14 +38,14 @@ class CardsAgainstHumanity():
         for player in self.__players:
             counter = 0
             while counter < 10:
-                player.addChard(self.pickChard(1))
+                player.addChard(self.pickCard(1))
         self.isPLaying = random.randint(0, len(self.__players))
 
     def getNextBlackChard(self):
-        return self.pickChard(0)
+        return self.pickCard(0)
 
     def getNextWhiteChard(self):
-        return self.pickChard(1)
+        return self.pickCard(1)
 
 
     def startGame(self):
